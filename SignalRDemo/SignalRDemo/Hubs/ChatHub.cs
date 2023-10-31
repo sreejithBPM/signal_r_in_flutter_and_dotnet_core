@@ -8,5 +8,10 @@ namespace SignalRDemo.Hubs
         {
             await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
+        public async Task SendTypingStatus(string user, bool isTyping)
+        {
+            await Clients.All.SendAsync("ReceiveTypingStatus", user, isTyping);
+        }
+
     }
 }

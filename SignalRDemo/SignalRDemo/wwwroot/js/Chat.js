@@ -2,17 +2,46 @@
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-//Disable the send button until connection is established.
+// Disable the send button until the connection is established.
 document.getElementById("sendButton").disabled = true;
 
-connection.on("ReceiveMessage", function (user, message) {
-    var li = document.createElement("li");
-    document.getElementById("messagesList").appendChild(li);
-    // We can assign user-supplied strings to an element's textContent because it
-    // is not interpreted as markup. If you're assigning in any other way, you 
-    // should be aware of possible script injection concerns.
-    li.textContent = `${user} says ${message}`;
+
+
+
+// Event listener for user typing
+document.getElementById("messageInput").addEventListener("input", function (event) {
+    var user = document.getElementById("userInput").value;
+    var isTyping = event.target.value.trim() !== ""; // Check if the input field is not empty
+    connection.invoke("SendTypingStatus", user, isTyping).catch(function (err) {
+        return console.error(err.toString());
+    });
 });
+
+connection.on("ReceiveMessage", function (user, message) {
+    var listItem = document.createElement("li");
+    listItem.textContent = `${user} says ${message}`;
+    document.getElementById("messagesList").appendChild(listItem);
+});
+
+connection.on('ReceiveTypingStatus', (user, isTyping) => {
+    const messagesList = document.getElementById('messagesList');
+    const typingStatus = `${user} is typing....`;
+
+    if (isTyping) {
+        //Display typing status
+        const typingItem = document.createElement('li');
+        typingItem.textContent = typingStatus;
+        messagesList.appendChild(typingItem);
+    } else {
+        //  Remove typing status
+        const items = messagesList.getElementsByTagName('li');
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].textContent === typingStatus) {
+                items[i].remove();
+            }
+        }
+    }
+})
 
 connection.start().then(function () {
     document.getElementById("sendButton").disabled = false;
@@ -26,5 +55,6 @@ document.getElementById("sendButton").addEventListener("click", function (event)
     connection.invoke("SendMessage", user, message).catch(function (err) {
         return console.error(err.toString());
     });
+    document.getElementById("messageInput").value = "";
     event.preventDefault();
 });

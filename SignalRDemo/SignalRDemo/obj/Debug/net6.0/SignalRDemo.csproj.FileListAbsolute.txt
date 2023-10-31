@@ -32,3 +32,4 @@ G:\bpmbiinc\Bolo\SignalRDemo\SignalRDemo\obj\Debug\net6.0\refint\SignalRDemo.dll
 G:\bpmbiinc\Bolo\SignalRDemo\SignalRDemo\obj\Debug\net6.0\SignalRDemo.pdb
 G:\bpmbiinc\Bolo\SignalRDemo\SignalRDemo\obj\Debug\net6.0\SignalRDemo.genruntimeconfig.cache
 G:\bpmbiinc\Bolo\SignalRDemo\SignalRDemo\obj\Debug\net6.0\ref\SignalRDemo.dll
+G:\bpmbiinc\Bolo\SignalRDemo\SignalRDemo\bin\Debug\net6.0\libman.json

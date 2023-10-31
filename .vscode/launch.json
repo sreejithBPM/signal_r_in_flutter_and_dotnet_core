@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "signal_r_with_dotnet",
+            "cwd": "SignalR in flutter\\signal_r_with_dotnet",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "signal_r_with_dotnet (profile mode)",
+            "cwd": "SignalR in flutter\\signal_r_with_dotnet",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "signal_r_with_dotnet (release mode)",
+            "cwd": "SignalR in flutter\\signal_r_with_dotnet",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

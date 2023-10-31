@@ -17,6 +17,18 @@
       "PackagePath": "staticwebassets\\js\\Chat.js"
     },
     {
+      "Id": "G:\\bpmbiinc\\Bolo\\SignalRDemo\\SignalRDemo\\wwwroot\\js\\demo.js.js",
+      "PackagePath": "staticwebassets\\js\\demo.js.js"
+    },
+    {
+      "Id": "G:\\bpmbiinc\\Bolo\\SignalRDemo\\SignalRDemo\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Id": "G:\\bpmbiinc\\Bolo\\SignalRDemo\\SignalRDemo\\wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js",
+      "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.min.js"
+    },
+    {
       "Id": "G:\\bpmbiinc\\Bolo\\SignalRDemo\\SignalRDemo\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
